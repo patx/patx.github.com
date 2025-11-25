@@ -1,45 +1,147 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harrison Erd</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" />
 
-<style type="text/css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Ubuntu", sans-serif;
+      background: #fafafa;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
 
-div.dd {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 175px;
-}
+      /* fade in */
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
 
-p {
-  font-family: 'Ubuntu', sans-serif;
-  text-align: center
-}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-a {
-  color: black
-}
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      animation: subtleFloat 6s ease-in-out infinite;
+    }
 
-a:hover {
-  -webkit-text-fill-color: black;
-  -webkit-text-stroke-color: black;
-  -webkit-text-stroke-width: 1.00px;
-}
-</style>
+    /* slow float effect */
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50%      { transform: translateY(-6px); }
+    }
 
-<title>harrison erd</title>
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 25%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      animation: breathe 6s ease-in-out infinite;
+    }
 
+    /* ultra subtle breathing glow */
+    @keyframes breathe {
+      0%, 100% { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
+      50%      { box-shadow: 0 6px 18px rgba(0,0,0,0.14); }
+    }
+
+    .name {
+      font-size: 64px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      animation: fadeSlide 1.4s ease forwards;
+    }
+
+    @keyframes fadeSlide {
+      0%   { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .links {
+      margin-top: 25px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-link {
+      width: 34px;
+      height: 34px;
+      opacity: 0.85;
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    .icon-link:hover {
+      opacity: 1;
+      transform: scale(1.18) translateY(-3px);
+    }
+
+    svg {
+      width: 34px;
+      height: 34px;
+      fill: #000;
+    }
+  </style>
 </head>
 
 <body>
-<div class="dd" id="moov">Harrison Erd</div>
-<br />
-<br />
-<br />
-<p>i <a href="https://github.com/patx">write python</a>. you can email me at <a href="mailto:harrisonerd@gmail.com">harrisonerd@gmail.com</a>.</p></body>
 
+  <div class="header">
+    <img class="avatar" src="avatar.png" alt="Avatar" />
+    <div class="name">Harrison Erd</div>
+  </div>
+
+  <!-- Icon Links -->
+  <div class="links">
+
+    <!-- GitHub -->
+    <a class="icon-link" href="https://github.com/patx" target="_blank" aria-label="GitHub">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
+                 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+                 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
+                 -.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.084-.729.084-.729 
+                 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.304 
+                 3.492.997.108-.776.417-1.305.76-1.605 
+                 -2.665-.3-5.466-1.332-5.466-5.93 
+                 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 
+                 0 0 1.005-.322 3.3 1.23a11.48 11.48 0 0 1 3-.404 
+                 c1.02.005 2.045.138 3 .404 2.28-1.552 3.285-1.23 3.285-1.23 
+                 .645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 
+                 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 
+                 0 1.606-.015 2.896-.015 3.286 
+                 0 .315.21.69.825.57C20.565 22.092 24 17.592 
+                 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+    </a>
+
+    <!-- Email -->
+    <a class="icon-link" href="mailto:harrisonerd@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 
+                 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
+                 4-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+
+  </div>
+
+</body>
 </html>
